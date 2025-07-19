@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const timelineData = {
-  2025: [
-    { title: "Project 1", description: "Description for Project 1", image: "/images/2025/project1.jpg" },
-    { title: "Project 2", description: "Description for Project 2", image: "/images/2025/project2.jpg" },
-    { title: "Project 3", description: "Description for Project 3", image: "/images/2025/project3.jpg" },
-    { title: "Project 4", description: "Description for Project 4", image: "/images/2025/project4.jpg" },
-  ],
-  2024: [/* ... add similar structure ... */],
-  // Add years down to 2011
-};
+const timelineData = {2025: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2025.', 'fullDescription': 'This is the full expanded description for Project 1 in 2025, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2025.', 'fullDescription': 'This is the full expanded description for Project 2 in 2025, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2025.', 'fullDescription': 'This is the full expanded description for Project 3 in 2025, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2025.', 'fullDescription': 'This is the full expanded description for Project 4 in 2025, with more detailed insights, goals, and outcomes.'}], 2024: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2024.', 'fullDescription': 'This is the full expanded description for Project 1 in 2024, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2024.', 'fullDescription': 'This is the full expanded description for Project 2 in 2024, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2024.', 'fullDescription': 'This is the full expanded description for Project 3 in 2024, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2024.', 'fullDescription': 'This is the full expanded description for Project 4 in 2024, with more detailed insights, goals, and outcomes.'}], 2023: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2023.', 'fullDescription': 'This is the full expanded description for Project 1 in 2023, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2023.', 'fullDescription': 'This is the full expanded description for Project 2 in 2023, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2023.', 'fullDescription': 'This is the full expanded description for Project 3 in 2023, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2023.', 'fullDescription': 'This is the full expanded description for Project 4 in 2023, with more detailed insights, goals, and outcomes.'}], 2022: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2022.', 'fullDescription': 'This is the full expanded description for Project 1 in 2022, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2022.', 'fullDescription': 'This is the full expanded description for Project 2 in 2022, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2022.', 'fullDescription': 'This is the full expanded description for Project 3 in 2022, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2022.', 'fullDescription': 'This is the full expanded description for Project 4 in 2022, with more detailed insights, goals, and outcomes.'}], 2021: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2021.', 'fullDescription': 'This is the full expanded description for Project 1 in 2021, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2021.', 'fullDescription': 'This is the full expanded description for Project 2 in 2021, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2021.', 'fullDescription': 'This is the full expanded description for Project 3 in 2021, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2021.', 'fullDescription': 'This is the full expanded description for Project 4 in 2021, with more detailed insights, goals, and outcomes.'}], 2020: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2020.', 'fullDescription': 'This is the full expanded description for Project 1 in 2020, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2020.', 'fullDescription': 'This is the full expanded description for Project 2 in 2020, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2020.', 'fullDescription': 'This is the full expanded description for Project 3 in 2020, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2020.', 'fullDescription': 'This is the full expanded description for Project 4 in 2020, with more detailed insights, goals, and outcomes.'}], 2019: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2019.', 'fullDescription': 'This is the full expanded description for Project 1 in 2019, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2019.', 'fullDescription': 'This is the full expanded description for Project 2 in 2019, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2019.', 'fullDescription': 'This is the full expanded description for Project 3 in 2019, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2019.', 'fullDescription': 'This is the full expanded description for Project 4 in 2019, with more detailed insights, goals, and outcomes.'}], 2018: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2018.', 'fullDescription': 'This is the full expanded description for Project 1 in 2018, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2018.', 'fullDescription': 'This is the full expanded description for Project 2 in 2018, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2018.', 'fullDescription': 'This is the full expanded description for Project 3 in 2018, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2018.', 'fullDescription': 'This is the full expanded description for Project 4 in 2018, with more detailed insights, goals, and outcomes.'}], 2017: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2017.', 'fullDescription': 'This is the full expanded description for Project 1 in 2017, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2017.', 'fullDescription': 'This is the full expanded description for Project 2 in 2017, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2017.', 'fullDescription': 'This is the full expanded description for Project 3 in 2017, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2017.', 'fullDescription': 'This is the full expanded description for Project 4 in 2017, with more detailed insights, goals, and outcomes.'}], 2016: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2016.', 'fullDescription': 'This is the full expanded description for Project 1 in 2016, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2016.', 'fullDescription': 'This is the full expanded description for Project 2 in 2016, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2016.', 'fullDescription': 'This is the full expanded description for Project 3 in 2016, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2016.', 'fullDescription': 'This is the full expanded description for Project 4 in 2016, with more detailed insights, goals, and outcomes.'}], 2015: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2015.', 'fullDescription': 'This is the full expanded description for Project 1 in 2015, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2015.', 'fullDescription': 'This is the full expanded description for Project 2 in 2015, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2015.', 'fullDescription': 'This is the full expanded description for Project 3 in 2015, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2015.', 'fullDescription': 'This is the full expanded description for Project 4 in 2015, with more detailed insights, goals, and outcomes.'}], 2014: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2014.', 'fullDescription': 'This is the full expanded description for Project 1 in 2014, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2014.', 'fullDescription': 'This is the full expanded description for Project 2 in 2014, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2014.', 'fullDescription': 'This is the full expanded description for Project 3 in 2014, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2014.', 'fullDescription': 'This is the full expanded description for Project 4 in 2014, with more detailed insights, goals, and outcomes.'}], 2013: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2013.', 'fullDescription': 'This is the full expanded description for Project 1 in 2013, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2013.', 'fullDescription': 'This is the full expanded description for Project 2 in 2013, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2013.', 'fullDescription': 'This is the full expanded description for Project 3 in 2013, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2013.', 'fullDescription': 'This is the full expanded description for Project 4 in 2013, with more detailed insights, goals, and outcomes.'}], 2012: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2012.', 'fullDescription': 'This is the full expanded description for Project 1 in 2012, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2012.', 'fullDescription': 'This is the full expanded description for Project 2 in 2012, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2012.', 'fullDescription': 'This is the full expanded description for Project 3 in 2012, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2012.', 'fullDescription': 'This is the full expanded description for Project 4 in 2012, with more detailed insights, goals, and outcomes.'}], 2011: [{'title': 'Project 1', 'description': 'This is a short summary for Project 1 in 2011.', 'fullDescription': 'This is the full expanded description for Project 1 in 2011, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 2', 'description': 'This is a short summary for Project 2 in 2011.', 'fullDescription': 'This is the full expanded description for Project 2 in 2011, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 3', 'description': 'This is a short summary for Project 3 in 2011.', 'fullDescription': 'This is the full expanded description for Project 3 in 2011, with more detailed insights, goals, and outcomes.'}, {'title': 'Project 4', 'description': 'This is a short summary for Project 4 in 2011.', 'fullDescription': 'This is the full expanded description for Project 4 in 2011, with more detailed insights, goals, and outcomes.'}]};
 
 const years = Object.keys(timelineData).sort((a, b) => b - a);
 
 const Timeline = () => {
   const [activeYear, setActiveYear] = useState("2025");
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleDescription = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 p-4 sm:p-8">
@@ -26,11 +22,12 @@ const Timeline = () => {
           <button
             key={year}
             onClick={() => setActiveYear(year)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-              activeYear === year
+            className={`
+              px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
+              ${activeYear === year
                 ? "bg-blue-600 text-white shadow-md scale-105"
-                : "bg-white hover:bg-blue-100 hover:text-blue-700 border"
-            }`}
+                : "bg-white hover:bg-blue-100 hover:text-blue-700 border"}
+            `}
           >
             {year}
           </button>
@@ -39,28 +36,34 @@ const Timeline = () => {
 
       <motion.div
         key={activeYear}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={ { opacity: 0, y: 20 } }
+        animate={ { opacity: 1, y: 0 } }
+        transition={ { duration: 0.5 } }
         className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2"
       >
         {timelineData[activeYear].map((item, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={ { scale: 1.03 } }
+            whileTap={ { scale: 0.98 } }
             className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-transform overflow-hidden cursor-pointer"
+            onClick={() => toggleDescription(index)}
           >
             <div className="overflow-hidden">
               <img
-                src={item.image}
+                src="/images/sample.jpg"
                 alt={item.title}
                 className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
               />
             </div>
             <div className="p-4">
               <h3 className="text-xl font-semibold">{item.title}</h3>
-              <p className="text-gray-600 mt-2">{item.description}</p>
+              <p className="text-gray-600 mt-2">
+                {expandedIndex === index ? item.fullDescription : item.description}
+              </p>
+              <span className="text-blue-500 text-sm mt-1 inline-block">
+                {expandedIndex === index ? "Show less ▲" : "Read more ▼"}
+              </span>
             </div>
           </motion.div>
         ))}
